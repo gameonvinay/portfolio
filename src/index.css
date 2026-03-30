@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist/index.css";
+
+@theme {
+  --color-neon-cyan: #00F5FF;
+  --color-neon-purple: #A855F7;
+  --color-neon-green: #10B981;
+  --color-dark-bg: #0F1016;
+  --color-dark-panel: #181A25;
+  --color-dark-border: #272934;
+}
+
+/* ─── Light Mode (default) ─── */
+:root {
+  --background: 220 20% 97%;
+  --foreground: 220 15% 10%;
+
+  /* Custom Portfolio Colors */
+  --electric-blue: 180 100% 40%;
+  --neon-purple: 270 86% 55%;
+  --deep-navy: 220 20% 97%;
+
+  /* Surface Colors */
+  --surface-dark: 220 15% 92%;
+  --surface-card: 220 15% 88%;
+
+  /* Border & Text */
+  --border-subtle: 220 10% 80%;
+  --text-primary: 220 15% 15%;
+  --text-secondary: 220 10% 45%;
+
+  /* Shadcn tokens – light */
+  --border: 220 13% 82%;
+  --input: 220 13% 82%;
+  --ring: 180 100% 40%;
+  --primary: 180 100% 40%;
+  --primary-foreground: 220 15% 10%;
+  --secondary: 220 15% 90%;
+  --secondary-foreground: 220 15% 20%;
+  --muted: 220 15% 93%;
+  --muted-foreground: 220 10% 45%;
+  --accent: 270 86% 55%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --popover: 220 20% 97%;
+  --popover-foreground: 220 15% 10%;
+  --card: 220 20% 97%;
+  --card-foreground: 220 15% 10%;
+  --radius: 0.5rem;
+}
+
+/* ─── Dark Mode ─── */
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+
+  /* Custom Portfolio Colors */
+  --electric-blue: 180 100% 50%;
+  --neon-purple: 270 86% 64%;
+  --deep-navy: 240 10% 3.9%;
+
+  /* Surface Colors */
+  --surface-dark: 240 10% 6.7%;
+  --surface-card: 240 10% 10.6%;
+
+  /* Border & Text */
+  --border-subtle: 240 5% 20.8%;
+  --text-primary: 0 0% 88.2%;
+  --text-secondary: 0 0% 61.6%;
+
+  /* Shadcn tokens – dark */
+  --border: 240 5% 20.8%;
+  --input: 240 5% 20.8%;
+  --ring: 180 100% 50%;
+  --primary: 180 100% 50%;
+  --primary-foreground: 240 10% 3.9%;
+  --secondary: 240 5% 14%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 5% 14%;
+  --muted-foreground: 240 5% 65%;
+  --accent: 270 86% 64%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --radius: 0.5rem;
+}
+
+body {
+  font-family: 'Geist Variable', system-ui, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Custom Spacing Scale */
+:root {
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 1rem;      /* 16px */
+  --space-4: 1.5rem;    /* 24px */
+  --space-5: 2rem;      /* 32px */
+  --space-6: 3rem;      /* 48px */
+  --space-7: 4rem;      /* 64px */
+  --space-8: 6rem;      /* 96px */
+}
+
+/* ─── Global theme transition ─── */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+}
+
+/* Glow Effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3),
+              0 0 40px rgba(168, 85, 247, 0.2);
+}
+
+/* Glass Morphism – dark mode */
+.dark .glass-panel {
+  background: rgba(24, 26, 37, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Glass Morphism – light mode */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* GPU-accelerated animations */
+.animate-hover {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Scroll animation base class */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
