@@ -27,7 +27,9 @@ const ProficiencyBars = () => {
             <span className="text-text-primary font-medium">{skill.name}</span>
             <span className="text-text-secondary text-sm">{skill.level}%</span>
           </div>
-          <div className="h-2 bg-dark-panel rounded-full overflow-hidden">
+          <div className={`h-2 rounded-full overflow-hidden ${
+            document.documentElement.classList.contains('dark') ? 'bg-dark-panel' : 'bg-surface-card'
+          }`}>
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: `${skill.level}%` }}

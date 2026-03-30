@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="relative z-10 py-32 bg-dark-bg/50">
+    <section id="contact" className={`relative z-10 py-32 ${
+      document.documentElement.classList.contains('dark') ? 'bg-dark-bg/50' : 'bg-surface-card/30'
+    }`}>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +48,9 @@ const ContactSection = () => {
               <Button className="px-6 h-11 bg-cyan-600 hover:bg-cyan-500 text-white font-medium text-sm">
                 Get In Touch
               </Button>
-              <Button variant="outline" className="px-6 h-11 border border-dark-border hover:bg-dark-panel text-text-primary font-medium text-sm">
+              <Button variant="outline" className={`px-6 h-11 border border-dark-border ${
+                document.documentElement.classList.contains('dark') ? 'hover:bg-dark-panel' : 'hover:bg-surface-card'
+              } text-text-primary font-medium text-sm`}>
                 Download Resume
               </Button>
             </div>
@@ -70,7 +74,9 @@ const ContactSection = () => {
             <input
               type="email"
               placeholder="Enter your email..."
-              className="flex-1 px-4 h-11 bg-dark-panel border border-dark-border rounded-md text-text-primary placeholder:text-text-secondary focus:outline-none focus:border-neon-cyan transition-colors text-sm"
+              className={`flex-1 px-4 h-11 rounded-md border border-dark-border focus:outline-none focus:border-neon-cyan transition-colors text-sm ${
+                document.documentElement.classList.contains('dark') ? 'bg-dark-panel' : 'bg-surface-card'
+              }`}
             />
             <Button type="submit" className="px-6 h-11 bg-neon-purple hover:bg-neon-purple/90 text-white text-sm font-medium">
               Subscribe

@@ -53,7 +53,9 @@ const Hero = () => {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-6 h-11 border border-dark-border rounded-md hover:bg-dark-panel transition-smooth font-medium text-text-primary text-sm"
+                className={`inline-flex items-center justify-center px-6 h-11 border border-dark-border rounded-md transition-smooth font-medium text-text-primary text-sm ${
+                  document.documentElement.classList.contains('dark') ? 'hover:bg-dark-panel' : 'hover:bg-surface-card'
+                }`}
               >
                 Contact Me
               </a>
@@ -69,7 +71,7 @@ const Hero = () => {
               {["React", "TypeScript", "Next.js", "AI Interfaces", "Design Systems"].map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-3 py-1.5 rounded-full border border-dark-border text-text-secondary bg-dark-panel/50"
+                  className="text-xs px-3 py-1.5 rounded-full border border-dark-border text-text-secondary bg-surface-card/50"
                 >
                   {tag}
                 </span>
@@ -121,14 +123,18 @@ const Hero = () => {
               <div className="absolute -inset-1.5 rounded-full border border-neon-cyan/20" />
 
               {/* Photo */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-dark-border">
+              <div className={`relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 ${
+                document.documentElement.classList.contains('dark') ? 'border-dark-border' : 'border-surface-panel'
+              }`}>
                 <img
                   src="/me.webp"
                   alt="Vinay Saini — Frontend Architect"
                   className="w-full h-full object-cover object-top scale-110"
                 />
                 {/* Subtle gradient overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/30 via-transparent to-transparent" />
+                <div className={`absolute inset-0 bg-gradient-to-t ${
+                  document.documentElement.classList.contains('dark') ? 'from-dark-bg/30' : 'from-surface-dark/20'
+                } via-transparent to-transparent`} />
               </div>
 
               {/* Floating decoration: years experience */}
@@ -182,4 +188,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

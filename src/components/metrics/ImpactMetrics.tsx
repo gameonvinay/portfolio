@@ -85,7 +85,9 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
 
 export default function ImpactMetrics() {
   return (
-    <section className="relative z-10 py-32 bg-dark-bg/40 overflow-hidden">
+    <section className={`relative z-10 py-32 ${
+      document.documentElement.classList.contains('dark') ? 'bg-dark-bg/40' : 'bg-surface-card/50'
+    } overflow-hidden`}>
       {/* Grid overlay */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -167,7 +169,9 @@ export default function ImpactMetrics() {
                 >
                   {/* Dot */}
                   <div
-                    className={`w-6 h-6 rounded-full ${m.color} ring-4 ring-dark-bg z-10 transition-smooth group-hover:scale-125`}
+                    className={`w-6 h-6 rounded-full ${m.color} ring-4 ${
+                      document.documentElement.classList.contains('dark') ? 'ring-dark-bg' : 'ring-surface-card'
+                    } z-10 transition-smooth group-hover:scale-125`}
                   />
 
                   {/* Year */}

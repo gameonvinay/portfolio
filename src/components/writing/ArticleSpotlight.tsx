@@ -61,9 +61,13 @@ const ArticleSpotlight = () => {
                   alt={article.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/70 via-transparent to-transparent" />
+                <div className={`absolute inset-0 bg-gradient-to-t ${
+                  document.documentElement.classList.contains('dark') ? 'from-dark-bg/70' : 'from-surface-dark/50'
+                } via-transparent to-transparent`} />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-neon-cyan/20 text-neon-cyan text-xs rounded-full backdrop-blur-sm border border-neon-cyan/20">
+                  <span className={`px-3 py-1 rounded-full text-xs backdrop-blur-sm border ${
+                    document.documentElement.classList.contains('dark') ? 'bg-neon-cyan/20 text-neon-cyan border-neon-cyan/20' : 'bg-surface-card/50 text-text-secondary border-dark-border'
+                  }`}>
                     {article.category}
                   </span>
                 </div>

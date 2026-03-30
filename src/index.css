@@ -12,22 +12,26 @@
 
 /* ─── Light Mode (default) ─── */
 :root {
-  --background: 220 20% 97%;
+  /* Background & Surfaces - Proper Hierarchy */
+  --background: 220 25% 98%;
   --foreground: 220 15% 10%;
+
+  /* Surface Hierarchy (CRITICAL FIX) */
+  --surface-dark: 220 25% 96%;    /* Slightly darker than bg */
+  --surface-card: 220 25% 94%;    /* Card depth */
+  --surface-panel: 220 25% 92%;   /* Panel depth */
 
   /* Custom Portfolio Colors */
   --electric-blue: 180 100% 40%;
   --neon-purple: 270 86% 55%;
   --deep-navy: 220 20% 97%;
 
-  /* Surface Colors */
-  --surface-dark: 220 15% 92%;
-  --surface-card: 220 15% 88%;
+  /* Borders - Light theme needs subtle but visible borders */
+  --border-subtle: 220 15% 85%;   /* More visible than dark mode */
 
-  /* Border & Text */
-  --border-subtle: 220 10% 80%;
-  --text-primary: 220 15% 15%;
-  --text-secondary: 220 10% 45%;
+  /* Text Hierarchy */
+  --text-primary: 220 15% 15%;    /* Dark gray, not pure black */
+  --text-secondary: 220 10% 35%;  /* Increased from 45% for readability
 
   /* Shadcn tokens – light */
   --border: 220 13% 82%;
@@ -121,12 +125,19 @@ body {
 
 /* Glass Morphism – dark mode */
 .dark .glass-panel {
-  background: rgba(24, 26, 37, 0.8);
-  backdrop-filter: blur(12px);
+  background: rgba(24, 26, 37, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Glass Morphism – light mode */
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid hsl(var(--border-subtle));
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.05);
+}
+
 .glass-panel {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);

@@ -36,7 +36,9 @@ const ProjectCard = ({ project, index }) => {
       viewport={{ once: true }}
       className="group relative perspective-1000"
     >
-      <div className="h-full glass-panel rounded-xl overflow-hidden transition-smooth hover:glow-primary">
+      <div className={`h-full glass-panel rounded-xl overflow-hidden transition-smooth hover:glow-primary ${
+        document.documentElement.classList.contains('dark') ? 'dark' : ''
+      }`}>
         {/* Cover Image */}
         <div className="aspect-video relative overflow-hidden">
           <img
@@ -44,7 +46,7 @@ const ProjectCard = ({ project, index }) => {
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/40 via-transparent to-transparent" />
         </div>
 
         <div className="p-6 space-y-4">
@@ -58,7 +60,7 @@ const ProjectCard = ({ project, index }) => {
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 bg-dark-panel border border-dark-border rounded-full text-xs text-text-secondary group-hover:border-neon-purple transition-colors"
+                className="px-3 py-1 bg-surface-card border border-dark-border rounded-full text-xs text-text-secondary group-hover:border-neon-purple transition-colors"
               >
                 {tech}
               </span>

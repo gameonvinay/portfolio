@@ -114,7 +114,9 @@ const TimelineItem = ({ experience, index, isLeft }) => {
 
 const ExperienceTimeline = () => {
   return (
-    <section className="relative z-10 py-32 bg-dark-bg/50">
+    <section className={`relative z-10 py-32 ${
+      document.documentElement.classList.contains('dark') ? 'bg-dark-bg/50' : 'bg-surface-card/30'
+    }`}>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -102,7 +102,7 @@ export default function ArchitecturePhilosophy() {
                   {p.tags.map((tag) => (
                     <span
                       key={tag}
-                      className={`text-xs px-3 py-1 rounded-full border ${p.border} ${p.accent} bg-dark-panel/50`}
+                      className={`text-xs px-3 py-1 rounded-full border ${p.border} ${p.accent} bg-surface-card/50`}
                     >
                       {tag}
                     </span>
