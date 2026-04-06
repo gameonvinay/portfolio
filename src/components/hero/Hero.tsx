@@ -127,7 +127,7 @@ const Hero = () => {
                 document.documentElement.classList.contains('dark') ? 'border-dark-border' : 'border-surface-panel'
               }`}>
                 <img
-                  src="/me.webp"
+                  src={`${import.meta.env.BASE_URL}me.webp`}
                   alt="Vinay Saini — Frontend Architect"
                   className="w-full h-full object-cover object-top scale-110"
                 />

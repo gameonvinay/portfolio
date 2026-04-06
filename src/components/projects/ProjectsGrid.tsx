@@ -7,7 +7,7 @@ const projectsData = [
     tech: ["React", "Node.js", "PostgreSQL"],
     challenge: "Built a scalable e-commerce platform handling 10k+ daily users",
     solution: "Implemented microservices architecture with Redis caching",
-    image: "/project_ecommerce.png",
+    image: `${import.meta.env.BASE_URL}project_ecommerce.png`,
   },
   {
     title: "Data Visualization Dashboard",
@@ -15,7 +15,7 @@ const projectsData = [
     tech: ["React", "D3.js", "WebSocket"],
     challenge: "Created complex data visualizations from scratch",
     solution: "Optimized rendering with WebGL and virtual scrolling",
-    image: "/project_dashboard.png",
+    image: `${import.meta.env.BASE_URL}project_dashboard.png`,
   },
   {
     title: "AI-Powered Chat Interface",
@@ -23,7 +23,7 @@ const projectsData = [
     tech: ["Next.js", "GraphQL", "Python"],
     challenge: "Designed intuitive chat interface for complex AI models",
     solution: "Built streaming response system with optimistic UI updates",
-    image: "/project_ai_chat.png",
+    image: `${import.meta.env.BASE_URL}project_ai_chat.png`,
   },
 ];
 

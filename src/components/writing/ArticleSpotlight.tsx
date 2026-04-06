@@ -10,7 +10,7 @@ const ArticleSpotlight = () => {
       category: "Technical",
       readTime: "8 min read",
       date: "March 2024",
-      image: "/article_rsc.png",
+      image: `${import.meta.env.BASE_URL}article_rsc.png`,
       featured: true,
     },
     {
@@ -19,7 +19,7 @@ const ArticleSpotlight = () => {
       category: "Performance",
       readTime: "12 min read",
       date: "February 2024",
-      image: "/article_perf.png",
+      image: `${import.meta.env.BASE_URL}article_perf.png`,
       featured: false,
     },
   ];
